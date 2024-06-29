@@ -29,7 +29,7 @@ public class BaseClient {
 
     private <T> ResponseEntity<Object> makeAndSendRequest(HttpMethod method, String path,
                                                           @Nullable Map<String, Object> parameters,
-                                                          @Nullable T body ) {
+                                                          @Nullable T body) {
         HttpEntity<T> requestEntity = new HttpEntity<>(body, defaultHeaders());
         ResponseEntity<Object> serverResponse;
 
@@ -40,7 +40,7 @@ public class BaseClient {
             } else {
                 serverResponse = restTemplate.exchange(path, method, requestEntity, Object.class);
             }
-        } catch(HttpStatusCodeException exc) {
+        } catch (HttpStatusCodeException exc) {
             ResponseEntity.BodyBuilder bodyBuilder = ResponseEntity.status(exc.getStatusCode());
             return bodyBuilder.body(exc.getResponseBodyAsByteArray());
         }
