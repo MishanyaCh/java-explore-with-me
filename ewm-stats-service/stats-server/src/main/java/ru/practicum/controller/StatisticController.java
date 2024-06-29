@@ -39,7 +39,7 @@ public class StatisticController {
     @GetMapping(path = "/stats")
     public List<ViewStatDto> getStatistic(@RequestParam String start, @RequestParam String end,
                                           @RequestParam(required = false) List<String> uris,
-                                          @RequestParam Boolean unique) {
+                                          @RequestParam(required = false, defaultValue = "false") Boolean unique) {
         log.info("Пришел GET /stats?start={}&end={}&uris={}&unique={} запрос", start, end, uris, unique);
         final List<ViewStatDto> result = statisticService.getStatistic(start, end, uris, unique);
         log.info("На GET /stats?start={}&end={}&uris={}&unique={} запрос отправлен ответ с размером тела: {}",
