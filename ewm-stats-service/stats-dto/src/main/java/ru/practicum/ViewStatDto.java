@@ -1,25 +1,23 @@
 package ru.practicum;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 public class ViewStatDto {
-    @JsonProperty("app")
-    private String serviceName;
+    private String app;
     private String uri;
     private Long hits;
 
-    public ViewStatDto(String serviceNameArg, String uriArg, Long hitsArg) {
-        serviceName = serviceNameArg;
+    public ViewStatDto(String appArg, String uriArg, Long hitsArg) {
+        app = appArg;
         uri = uriArg;
         hits = hitsArg;
     }
 
     @Override
     public String toString() {
-        return "ViewStatDto{" + "serviceName='" + serviceName + '\'' + ", uri='" + uri + '\'' + ", hits='" + hits + "}";
+        return "ViewStatDto{" + "applicationName='" + app + '\'' + ", uri='" + uri + '\'' + ", hits=" + hits + "}";
     }
 }
