@@ -15,7 +15,6 @@ services:
       - DB_USER=postgres
       - DB_PASSWORD=iamroot
 
-
   stats-db:
     image: postgres:14-alpine
     container_name: stats-db
@@ -28,6 +27,25 @@ services:
 
   ewm-service:
     container_name: emw-main-service
-    build: ewm-main-service
+    build: ewm-main-service/main-service
     ports:
       - "8080:8080"
+    depends_on:
+      - ewm-db
+    environment:
+      - STATS_SERVER_URL=http://localhost:9090
+      - DB_HOST=ewm-main
+      - DB_PORT=5432
+      - DB_NAME=ewm-main-service
+      - DB_USER=postgres
+      - DB_PASSWORD=iamroot
+
+  ewm-db:
+   image: postgres:14-alpine
+   container_name: ewm-main-db
+   ports:
+     - "6542:5432"
+   environment:
+     - POSTGRES_DB=ewm-main
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=iamroot
