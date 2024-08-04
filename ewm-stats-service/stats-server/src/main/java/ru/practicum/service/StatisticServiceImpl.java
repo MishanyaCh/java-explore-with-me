@@ -39,13 +39,13 @@ public class StatisticServiceImpl implements StatisticService {
         List<ViewStatDto> result;
 
         if (unique) { // если unique = true, то в подсчете статистики участвуют только неповторяющиеся IP-адреса пользователей
-            if (uris == null) {
+            if (uris.isEmpty()) {
                 result = statisticRepository.getStatisticForUniqueIpByTimeInterval(startDate, endDate);
             } else {
                 result = statisticRepository.getStatisticForUniqueIpByTimeIntervalAndUrisList(startDate, endDate, uris);
             }
         } else {
-            if (uris == null) {
+            if (uris.isEmpty()) {
                 result = statisticRepository.getStatisticByTimeInterval(startDate, endDate);
             } else {
                 result = statisticRepository.getStatisticByTimeIntervalAndUrisList(startDate, endDate, uris);
