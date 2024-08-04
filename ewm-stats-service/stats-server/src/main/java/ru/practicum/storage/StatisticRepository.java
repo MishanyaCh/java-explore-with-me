@@ -11,8 +11,7 @@ import java.util.List;
 public interface StatisticRepository extends JpaRepository<StatRecord, Integer> {
     @Query(value = "SELECT new ru.practicum.ViewStatDto(st.serviceName, st.uri, COUNT(st.ip)) " +
             "FROM StatRecord AS st " +
-            "WHERE st.timestamp BETWEEN :start AND :end " +
-            "AND st.uri IN :uris " +
+            "WHERE (st.timestamp BETWEEN :start AND :end) AND st.uri IN :uris " +
             "GROUP BY st.serviceName, st.uri " +
             "ORDER BY COUNT(st.ip) DESC ")
     List<ViewStatDto> getStatisticByTimeIntervalAndUrisList(LocalDateTime start, LocalDateTime end, List<String> uris);
@@ -33,8 +32,7 @@ public interface StatisticRepository extends JpaRepository<StatRecord, Integer> 
 
     @Query(value = "SELECT new ru.practicum.ViewStatDto(st.serviceName, st.uri, COUNT(DISTINCT st.ip)) " +
             "FROM StatRecord AS st " +
-            "WHERE st.timestamp BETWEEN :start AND :end " +
-            "AND st.uri IN :uris " +
+            "WHERE (st.timestamp BETWEEN :start AND :end) AND st.uri IN :uris " +
             "GROUP BY st.serviceName, st.uri " +
             "ORDER BY COUNT(DISTINCT st.ip) DESC")
     List<ViewStatDto> getStatisticForUniqueIpByTimeIntervalAndUrisList(LocalDateTime start, LocalDateTime end,
