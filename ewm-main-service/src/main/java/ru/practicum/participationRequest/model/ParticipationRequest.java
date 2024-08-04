@@ -35,11 +35,11 @@ public class ParticipationRequest {
     private LocalDateTime creationDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="event_id")
+    @JoinColumn(name = "event_id")
     private Event event;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="requester_id")
+    @JoinColumn(name = "requester_id")
     private User requester;
 
     public ParticipationRequest() {

@@ -19,7 +19,7 @@ public class UpdateCompilationRequestDto {
     @JsonProperty(value = "events")
     private ArrayList<Long> eventsIds;
 
-    public UpdateCompilationRequestDto (String titleArg, Boolean isPinnedArg, ArrayList<Long> eventsIdsArg) {
+    public UpdateCompilationRequestDto(String titleArg, Boolean isPinnedArg, ArrayList<Long> eventsIdsArg) {
         title = titleArg;
         isPinned = isPinnedArg;
         eventsIds = eventsIdsArg;

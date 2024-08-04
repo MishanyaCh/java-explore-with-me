@@ -7,7 +7,6 @@ import ru.practicum.category.mapper.CategoryMapper;
 import ru.practicum.category.model.Category;
 import ru.practicum.category.storage.CategoryRepository;
 import ru.practicum.enums.EventState;
-import ru.practicum.enums.StateAction;
 import ru.practicum.event.dto.EventFullResponseDto;
 import ru.practicum.event.dto.EventShortResponseDto;
 import ru.practicum.event.dto.LocationDto;

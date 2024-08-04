@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface ParticipationRequestRepository extends JpaRepository<ParticipationRequest, Long> {
     boolean existsParticipationRequestByRequesterIdAndEventId(int requesterId, long eventId);
+
     @Query(value = "SELECT * " +
             "FROM (SELECT * FROM participation_requests WHERE requester_id = :requesterId) AS req " +
             "INNER JOIN events AS ev ON req.event_id = ev.id " +

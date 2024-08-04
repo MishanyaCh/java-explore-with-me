@@ -22,10 +22,10 @@ public class EventFullResponseDto extends EventResponseDto {
     public EventFullResponseDto(Long idArg, String titleArg, String shortDescriptionArg, String fullDescriptionArg,
                                 LocalDateTime eventDateArg, LocalDateTime creationDateArg, String stateArg,
                                 Boolean paidArg, Boolean requestModerationArg, Integer participantLimitArg,
-                                CategoryDto categoryDtoArg, LocationDto LocationDtoArg, UserShortDto userShortDtoArg,
+                                CategoryDto categoryDtoArg, LocationDto locationDtoArg, UserShortDto userShortDtoArg,
                                 LocalDateTime publicationDateArg, Integer confirmedRequestsArg, Integer viewsArg) {
         super(idArg, titleArg, shortDescriptionArg, fullDescriptionArg, eventDateArg, creationDateArg, stateArg,
-                paidArg, requestModerationArg, participantLimitArg, categoryDtoArg, LocationDtoArg, userShortDtoArg);
+                paidArg, requestModerationArg, participantLimitArg, categoryDtoArg, locationDtoArg, userShortDtoArg);
         publicationDate = publicationDateArg;
         confirmedRequests = confirmedRequestsArg;
         views = viewsArg;
