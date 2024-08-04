@@ -14,10 +14,10 @@ import java.util.List;
 
 @Service
 public class StatisticServiceImpl implements StatisticService {
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
     private final StatisticMapper statisticMapper;
     private final StatisticRepository statisticRepository;
-
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     @Autowired
     public StatisticServiceImpl(StatisticMapper statisticMapperArg, StatisticRepository statisticRepositoryArg) {

@@ -20,6 +20,6 @@ public class ViewStatDto {
 
     @Override
     public String toString() {
-        return "ViewStatDto{" + "serviceName='" + serviceName + '\'' + ", uri='" + uri + '\'' + ", hits='" + hits + "}";
+        return "ViewStatDto{" + "serviceName='" + serviceName + '\'' + ", uri='" + uri + '\'' + ", hits=" + hits + "}";
     }
 }
