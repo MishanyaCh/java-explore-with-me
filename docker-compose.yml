@@ -33,7 +33,7 @@ services:
       - ewm-db
     environment:
       - STATS_SERVER_URL=http://localhost:9090
-      - DB_HOST=ewm-main-db
+      - DB_HOST=ewm-db
       - DB_PORT=5432
       - DB_NAME=ewm-main-service
       - DB_USER=postgres
