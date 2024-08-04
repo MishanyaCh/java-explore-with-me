@@ -3,7 +3,6 @@ package ru.practicum.client;
 import ru.practicum.StatDto;
 import ru.practicum.ViewStatDto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface StatisticClient {
