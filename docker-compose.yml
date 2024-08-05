@@ -35,7 +35,7 @@ services:
       - STATS_SERVER_URL=http://localhost:9090
       - DB_HOST=ewm-main-db
       - DB_PORT=5432
-      - DB_NAME=ewm-main-service
+      - DB_NAME=ewm-main
       - DB_USER=postgres
       - DB_PASSWORD=iamroot
 
