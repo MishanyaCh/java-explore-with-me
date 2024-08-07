@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class StatisticMapperImpl implements StatisticMapper {
     @Override
     public StatRecord toStatRecord(StatDto inputDto) {
-        String serviceName = inputDto.getServiceName();
+        String serviceName = inputDto.getApp();
         String uri = inputDto.getUri();
         String ip = inputDto.getIp();
         LocalDateTime timestamp = inputDto.getTimestamp();

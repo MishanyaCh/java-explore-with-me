@@ -1,12 +1,12 @@
 package ru.practicum.client;
 
-import org.springframework.http.ResponseEntity;
 import ru.practicum.StatDto;
+import ru.practicum.ViewStatDto;
 
 import java.util.List;
 
 public interface StatisticClient {
-    ResponseEntity<Object> saveInformation(StatDto statDto);
+    StatDto saveInformation(StatDto statDto);
 
-    ResponseEntity<Object> getStatistic(String start, String end, List<String> uris, Boolean unique);
+    List<ViewStatDto> getStatistic(String start, String end, List<String> uris, Boolean unique);
 }
