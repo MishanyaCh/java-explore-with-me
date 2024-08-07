@@ -36,8 +36,13 @@ public class StatisticServiceImpl implements StatisticService {
     public List<ViewStatDto> getStatistic(String start, String end, List<String> uris, Boolean unique) {
         LocalDateTime startDate = LocalDateTime.parse(start, formatter);
         LocalDateTime endDate = LocalDateTime.parse(end, formatter);
-        List<ViewStatDto> result;
+        if (endDate.isBefore(startDate)) {
+            String message = "Диапазон выборки статистики задан некорректно! " +
+                    "Дата конца диапазона выборки должна быть позже чем дата начала";
+            throw new IllegalArgumentException(message);
+        }
 
+        List<ViewStatDto> result;
         if (unique) { // если unique = true, то в подсчете статистики участвуют только неповторяющиеся IP-адреса пользователей
             if (uris.isEmpty()) {
                 result = statisticRepository.getStatisticForUniqueIpByTimeInterval(startDate, endDate);
